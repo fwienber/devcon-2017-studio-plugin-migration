@@ -8,7 +8,7 @@
   </parent>
 
   <artifactId>rubber-duck-studio-plugin</artifactId>
-  <packaging>jangaroo</packaging>
+  <packaging>jangaroo-pkg</packaging>
 
   <description>A Rubber Duck for CoreMedia Studio</description>
 
@@ -59,11 +59,15 @@
     <plugins>
       <plugin>
         <groupId>net.jangaroo</groupId>
-        <artifactId>exml-maven-plugin</artifactId>
+        <artifactId>jangaroo-maven-plugin</artifactId>
         <version>${jangaroo.version}</version>
         <extensions>true</extensions>
         <configuration>
-          <configClassPackage>com.acme.config</configClassPackage>
+          <namespaces>
+            <namespace>
+              <uri>exml:com.acme.config</uri>
+            </namespace>
+          </namespaces>
         </configuration>
       </plugin>
     </plugins>

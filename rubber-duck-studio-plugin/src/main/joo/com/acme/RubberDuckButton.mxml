@@ -1,23 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<exml:component xmlns:exml="http://www.jangaroo.net/exml/0.8"
+<!--- 
+     A button that opens a rubber duck window.
+   -->
+<Button         xmlns:fx="http://ns.adobe.com/mxml/2009"
+                xmlns:local="com.acme.*"
+                xmlns:exml="http://www.jangaroo.net/exml/0.8"
                 xmlns="exml:ext.config"
                 xmlns:ui="exml:com.coremedia.ui.config"
                 xmlns:acme="exml:com.acme.config">
-  <exml:description>
-     A button that opens a rubber duck window.
-  </exml:description>
-  <exml:import class="com.acme.RubberDuck_properties"/>
-  <button>
+  <fx:Script><![CDATA[
+    import com.acme.RubberDuck_properties;
+    import com.acme.config.rubberDuckButton;
+
+    public static const xtype:String = "com.acme.config.rubberDuckButton";
+
+    private var config:rubberDuckButton;
+
+    public native function RubberDuckButton(config:rubberDuckButton = null);
+  ]]></fx:Script>
+
     <baseAction>
-      <ui:openDialogAction
-              tooltip="{RubberDuck_properties.INSTANCE.extension_button_tooltip}"
-              text="{RubberDuck_properties.INSTANCE.extension_button_text}"
-              iconCls="rubber-duck-icon"
-              useActionAsAnimationTarget="true">
+      <ui:OpenDialogAction tooltip="{RubberDuck_properties.INSTANCE.extension_button_tooltip}"
+                           text="{RubberDuck_properties.INSTANCE.extension_button_text}"
+                           iconCls="rubber-duck-icon"
+                           useActionAsAnimationTarget="true">
         <ui:dialog>
-          <acme:rubberDuckWindow/>
+          <acme:RubberDuckWindow/>
         </ui:dialog>
-      </ui:openDialogAction>
+      </ui:OpenDialogAction>
     </baseAction>
-  </button>
-</exml:component>
+  
+</Button>

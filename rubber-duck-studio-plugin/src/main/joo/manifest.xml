@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<componentPackage>
+  <component class="com.acme.RubberDuckButton"/>
+  <component class="com.acme.RubberDuckStudioPlugin"/>
+  <component class="com.acme.RubberDuckWindow"/>
+</componentPackage>
