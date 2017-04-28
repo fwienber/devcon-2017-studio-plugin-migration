@@ -10,14 +10,14 @@
                 xmlns:acme="exml:com.acme.config">
   <fx:Script><![CDATA[
     import com.acme.RubberDuck_properties;
-    import com.acme.config.rubberDuckButton;
+    import com.acme.RubberDuckButton;
 
     public static const xtype:String = "com.acme.config.rubberDuckButton";
 
-    private var config:rubberDuckButton;
+    private var config:RubberDuckButton;
 
-    public native function RubberDuckButton(config:rubberDuckButton = null);
-  ]]></fx:Script>
+    public native function RubberDuckButton(config:RubberDuckButton = null);
+    ]]></fx:Script>
 
     <baseAction>
       <ui:OpenDialogAction tooltip="{RubberDuck_properties.INSTANCE.extension_button_tooltip}"

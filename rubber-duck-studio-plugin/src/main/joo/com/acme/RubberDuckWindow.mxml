@@ -14,26 +14,29 @@
                 title="{RubberDuck_properties.INSTANCE.extension_button_text}">
   <fx:Script><![CDATA[
     import ext.Ext;
+
     import com.coremedia.cms.editor.sdk.util.LocaleUtil;
+
     import js.SpeechSynthesisUtterance;
     import js.speechSynthesis;
+
     import com.acme.RubberDuck_properties;
-    import com.acme.config.rubberDuckWindow;
+    import com.acme.RubberDuckWindow;
 
     public static const xtype:String = "com.acme.config.rubberDuckWindow";
 
     public static const RUBBER_DUCK_PHRASES:Array = RubberDuck_properties.INSTANCE.quack_text.split('\n');
 
-    private var config:rubberDuckWindow;
+    private var config:RubberDuckWindow;
     private var phraseIndex:int;
 
     // called by generated constructor code
-    private function __initialize__(config:rubberDuckWindow):void {
+    private function __initialize__(config:RubberDuckWindow):void {
       phraseIndex = 0;
     }
 
-    public native function RubberDuckWindow(config:rubberDuckWindow = null);
-  ]]></fx:Script>
+    public native function RubberDuckWindow(config:RubberDuckWindow = null);
+    ]]></fx:Script>
 
     <items>
       <ui:Image src="joo/resources/images/rubber-duck/lego-rubber-duck.png"

@@ -8,12 +8,12 @@
             xmlns:editor="exml:com.coremedia.cms.editor.sdk.config"
             xmlns:acme="exml:com.acme.config">
   <fx:Script><![CDATA[
-    import com.acme.config.rubberDuckStudioPlugin;
+    import com.acme.RubberDuckStudioPlugin;
 
-    private var config:rubberDuckStudioPlugin;
+    private var config:RubberDuckStudioPlugin;
 
-    public native function RubberDuckStudioPlugin(config:rubberDuckStudioPlugin = null);
-  ]]></fx:Script>
+    public native function RubberDuckStudioPlugin(config:RubberDuckStudioPlugin = null);
+    ]]></fx:Script>
 
     <editor:rules>
       <editor:ExtensionsMenu>
