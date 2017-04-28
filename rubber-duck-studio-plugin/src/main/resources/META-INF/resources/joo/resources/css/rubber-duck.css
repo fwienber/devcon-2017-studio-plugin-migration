@@ -1,0 +1,7 @@
+.x-favorites-toolbar-button button.rubber-duck-icon {
+    background-image: url("../images/rubber-duck/rubber-duck-36x24-white.png") !important;
+}
+.x-favorites-toolbar-button.x-btn-over button.rubber-duck-icon {
+    background-image: url("../images/rubber-duck/rubber-duck-36x24-blue.png") !important;
+    background-position: center 0 !important;
+}

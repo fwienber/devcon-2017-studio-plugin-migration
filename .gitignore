@@ -1,0 +1,37 @@
+# Intellij Idea:
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Maven:
+target/
+overlays/
+.m2
+
+# Eclipse:
+.classpath
+.project
+.settings/
+
+# Logs:
+*.log
+*.out
+
+# Git:
+*.orig
+
+# OS X:
+.DS_Store
+
+# Emacs:
+*~
+# Vagrant:
+.vagrant/
+.vagrantuser
+.repository
+/test-data/content/__blob
+berks-cookbooks
+
+# Styledocco:
+/modules/cae/cae-development-resources/src/main/resources/META-INF/resources/themes/reframed/node_modules
