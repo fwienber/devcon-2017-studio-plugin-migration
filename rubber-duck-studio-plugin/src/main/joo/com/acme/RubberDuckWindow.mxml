@@ -39,7 +39,7 @@
     ]]></fx:Script>
 
     <items>
-      <ui:Image src="joo/resources/images/rubber-duck/lego-rubber-duck.png"
+      <ui:Image src="{Ext.getResourcePath('joo/resources/images/rubber-duck/lego-rubber-duck.png', null, 'com.coremedia.blueprint__rubber-duck-studio-plugin')}"
                 width="100%"
                 height="100%"/>
     </items>
