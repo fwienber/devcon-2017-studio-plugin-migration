@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--- 
-     A window showing a rubber duck and a button to let it quack.
-   -->
-<Window         xmlns:fx="http://ns.adobe.com/mxml/2009"
-                xmlns:local="com.acme.*"
-                xmlns:exml="http://www.jangaroo.net/exml/0.8"
-                xmlns="exml:ext.config"
-                xmlns:ui="exml:com.coremedia.ui.config"
-                width="300"
-                height="300"
-                resizable="true"
-                layout="fit"
-                title="{RubberDuck_properties.INSTANCE.extension_button_text}">
+<!---
+ A window showing a rubber duck and a button to let it quack.
+-->
+<Window xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:exml="http://www.jangaroo.net/exml/0.8"
+        xmlns="exml:ext.config"
+        xmlns:ui="exml:com.coremedia.ui.config"
+        width="300"
+        height="300"
+        resizable="true"
+        layout="fit"
+        title="{RubberDuck_properties.INSTANCE.extension_button_text}">
   <fx:Script><![CDATA[
-    import ext.Ext;
-
     import com.coremedia.cms.editor.sdk.util.LocaleUtil;
+
+    import ext.Ext;
 
     import js.SpeechSynthesisUtterance;
     import js.speechSynthesis;
-
-    import com.acme.RubberDuck_properties;
-    import com.acme.RubberDuckWindow;
 
     public static const xtype:String = "com.acme.config.rubberDuckWindow";
 
@@ -38,27 +34,29 @@
     public native function RubberDuckWindow(config:RubberDuckWindow = null);
     ]]></fx:Script>
 
-    <items>
-      <ui:Image src="{Ext.getResourcePath('joo/resources/images/rubber-duck/lego-rubber-duck.png', null, 'com.coremedia.blueprint__rubber-duck-studio-plugin')}"
-                width="100%"
-                height="100%"/>
-    </items>
-    <tbar>
-      <Toolbar>
-        <items>
-          <Button text="{RubberDuck_properties.INSTANCE.quack_button_text}">
-            <handler>{
-              function():void {
-                var text:String = RUBBER_DUCK_PHRASES[phraseIndex++ % RUBBER_DUCK_PHRASES.length];
-                var utterance:SpeechSynthesisUtterance = new SpeechSynthesisUtterance(text);
-                utterance.pitch = 500 / getWidth();
-                utterance.lang = LocaleUtil.getLocale();
-                speechSynthesis.speak(utterance);
-              }
-            }</handler>
-          </Button>
-        </items>
-      </Toolbar>
-    </tbar>
-  
+  <items>
+    <ui:Image
+            src="{Ext.getResourcePath('joo/resources/images/rubber-duck/lego-rubber-duck.png', null, 'com.coremedia.blueprint__rubber-duck-studio-plugin')}"
+            width="100%"
+            height="100%"/>
+  </items>
+  <tbar>
+    <Toolbar>
+      <items>
+        <Button text="{RubberDuck_properties.INSTANCE.quack_button_text}">
+          <handler>{
+            function():void {
+            var text:String = RUBBER_DUCK_PHRASES[phraseIndex++ % RUBBER_DUCK_PHRASES.length];
+            var utterance:SpeechSynthesisUtterance = new SpeechSynthesisUtterance(text);
+            utterance.pitch = 500 / getWidth();
+            utterance.lang = LocaleUtil.getLocale();
+            speechSynthesis.speak(utterance);
+            }
+            }
+          </handler>
+        </Button>
+      </items>
+    </Toolbar>
+  </tbar>
+
 </Window>
