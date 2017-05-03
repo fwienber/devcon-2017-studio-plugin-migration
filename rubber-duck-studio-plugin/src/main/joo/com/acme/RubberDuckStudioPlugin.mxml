@@ -16,7 +16,7 @@
     ]]></fx:Script>
 
     <editor:rules>
-      <editor:ExtensionsMenu>
+      <editor:ExtensionsMenuToolbar>
         <editor:plugins>
           <ui:AddItemsPlugin>
             <ui:items>
@@ -24,7 +24,7 @@
             </ui:items>
           </ui:AddItemsPlugin>
         </editor:plugins>
-      </editor:ExtensionsMenu>
+      </editor:ExtensionsMenuToolbar>
     </editor:rules>
   
 </editor:StudioPlugin>
