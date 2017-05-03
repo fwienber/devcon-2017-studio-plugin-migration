@@ -6,6 +6,7 @@
         xmlns:exml="http://www.jangaroo.net/exml/0.8"
         xmlns="exml:ext.config"
         xmlns:ui="exml:com.coremedia.ui.config"
+        xmlns:js="js.*"
         width="300"
         height="300"
         resizable="true"
@@ -17,7 +18,6 @@
 
     import ext.Ext;
 
-    import js.SpeechSynthesisUtterance;
     import js.speechSynthesis;
 
     import mx.resources.ResourceManager;
@@ -30,6 +30,11 @@
     public native function RubberDuckWindow(config:RubberDuckWindow = null);
     ]]></fx:Script>
 
+  <fx:Declarations>
+    <js:SpeechSynthesisUtterance id="utterance"
+                                 lang="{LocaleUtil.getLocale()}"
+    />
+  </fx:Declarations>
   <items>
     <ui:Image
             src="{Ext.getResourcePath('joo/resources/images/rubber-duck/lego-rubber-duck.png', null, 'com.coremedia.blueprint__rubber-duck-studio-plugin')}"
@@ -42,10 +47,8 @@
         <Button text="{resourceManager.getString('com.acme.RubberDuck', 'quack_button_text')}">
           <handler>{
             function():void {
-            var text:String = RUBBER_DUCK_PHRASES[phraseIndex++ % RUBBER_DUCK_PHRASES.length];
-            var utterance:SpeechSynthesisUtterance = new SpeechSynthesisUtterance(text);
+            utterance.text = RUBBER_DUCK_PHRASES[phraseIndex++ % RUBBER_DUCK_PHRASES.length];
             utterance.pitch = 500 / getWidth();
-            utterance.lang = LocaleUtil.getLocale();
             speechSynthesis.speak(utterance);
             }
             }
