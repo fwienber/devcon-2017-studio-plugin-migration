@@ -1,0 +1,8 @@
+{
+  "studioPlugins": [
+    {
+      "name": "Rubber Duck Plugin",
+      "mainClass": "com.acme.RubberDuckStudioPlugin"
+    }
+  ]
+}
