@@ -8,8 +8,6 @@
         xmlns:ui="exml:com.coremedia.ui.config"
         xmlns:acme="exml:com.acme.config">
   <fx:Script><![CDATA[
-    public static const xtype:String = "com.acme.config.rubberDuckButton";
-
     private var config:RubberDuckButton;
 
     public native function RubberDuckButton(config:RubberDuckButton = null);

@@ -19,17 +19,10 @@
     import js.SpeechSynthesisUtterance;
     import js.speechSynthesis;
 
-    public static const xtype:String = "com.acme.config.rubberDuckWindow";
-
     public static const RUBBER_DUCK_PHRASES:Array = RubberDuck_properties.INSTANCE.quack_text.split('\n');
 
     private var config:RubberDuckWindow;
-    private var phraseIndex:int;
-
-    // called by generated constructor code
-    private function __initialize__(config:RubberDuckWindow):void {
-      phraseIndex = 0;
-    }
+    private var phraseIndex:int = 0;
 
     public native function RubberDuckWindow(config:RubberDuckWindow = null);
     ]]></fx:Script>
