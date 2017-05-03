@@ -48,7 +48,6 @@
           <handler>{
             function():void {
             utterance.text = RUBBER_DUCK_PHRASES[phraseIndex++ % RUBBER_DUCK_PHRASES.length];
-            utterance.pitch = 500 / getWidth();
             speechSynthesis.speak(utterance);
             }
             }
@@ -57,5 +56,8 @@
       </items>
     </Toolbar>
   </tbar>
+  <onResize><![CDATA[
+      utterance.pitch = 500 / event.width;
+    ]]></onResize>
 
 </Window>
