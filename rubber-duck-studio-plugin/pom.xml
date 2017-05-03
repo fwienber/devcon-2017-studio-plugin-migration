@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.coremedia.blueprint</groupId>
     <artifactId>rubber-duck</artifactId>
-    <version>7.1-BP-SNAPSHOT</version>
+    <version>1-SNAPSHOT</version>
   </parent>
 
   <artifactId>rubber-duck-studio-plugin</artifactId>
