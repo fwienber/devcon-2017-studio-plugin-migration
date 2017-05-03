@@ -7,6 +7,7 @@
         xmlns="exml:ext.config"
         xmlns:ui="exml:com.coremedia.ui.config"
         xmlns:acme="exml:com.acme.config">
+  <fx:Metadata>[ResourceBundle("com.acme.RubberDuck")]</fx:Metadata>
   <fx:Script><![CDATA[
     private var config:RubberDuckButton;
 
@@ -14,8 +15,8 @@
     ]]></fx:Script>
 
   <baseAction>
-    <ui:OpenDialogAction tooltip="{RubberDuck_properties.INSTANCE.extension_button_tooltip}"
-                         text="{RubberDuck_properties.INSTANCE.extension_button_text}"
+    <ui:OpenDialogAction tooltip="{resourceManager.getString('com.acme.RubberDuck', 'extension_button_tooltip')}"
+                         text="{resourceManager.getString('com.acme.RubberDuck', 'extension_button_text')}"
                          iconCls="rubber-duck-icon"
                          useActionAsAnimationTarget="true">
       <ui:dialog>

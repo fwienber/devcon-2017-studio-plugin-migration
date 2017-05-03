@@ -10,7 +10,8 @@
         height="300"
         resizable="true"
         layout="fit"
-        title="{RubberDuck_properties.INSTANCE.extension_button_text}">
+        title="{resourceManager.getString('com.acme.RubberDuck', 'extension_button_text')}">
+  <fx:Metadata>[ResourceBundle("com.acme.RubberDuck")]</fx:Metadata>
   <fx:Script><![CDATA[
     import com.coremedia.cms.editor.sdk.util.LocaleUtil;
 
@@ -19,7 +20,9 @@
     import js.SpeechSynthesisUtterance;
     import js.speechSynthesis;
 
-    public static const RUBBER_DUCK_PHRASES:Array = RubberDuck_properties.INSTANCE.quack_text.split('\n');
+    import mx.resources.ResourceManager;
+
+    public static const RUBBER_DUCK_PHRASES:Array = ResourceManager.getInstance().getString('com.acme.RubberDuck', 'quack_text').split('\n');
 
     private var config:RubberDuckWindow;
     private var phraseIndex:int = 0;
@@ -36,7 +39,7 @@
   <tbar>
     <Toolbar>
       <items>
-        <Button text="{RubberDuck_properties.INSTANCE.quack_button_text}">
+        <Button text="{resourceManager.getString('com.acme.RubberDuck', 'quack_button_text')}">
           <handler>{
             function():void {
             var text:String = RUBBER_DUCK_PHRASES[phraseIndex++ % RUBBER_DUCK_PHRASES.length];
